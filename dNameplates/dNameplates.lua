@@ -1,7 +1,6 @@
-local mediaFolder = "Interface\\AddOns\\dMedia\\"	-- don't touch this ...
-
-local TEXTURE = mediaFolder.."dM3"
-local FONT = mediaFolder.."BitOnX.ttf"
+﻿
+local TEXTURE = "Interface\\AddOns\\oUF_mono\\media\\statusbar"
+local FONT = "Fonts\\ARIALN.ttf"
 local FONTSIZE = 7
 local FONTFLAG = "OUTLINE MONOCHROME"			-- "THINOUTLINE", "OUTLINE MONOCHROME", "OUTLINE" or nil (no outline)
 local FontShadowOffset = 0						-- 0 = no shadow
@@ -29,32 +28,62 @@ local dNamePlates = CreateFrame("Frame", nil, UIParent)
 dNamePlates:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
 
 -- totem list
-local totems = {
-	["Earthbind Totem"] = [[Interface\Icons\Spell_nature_strengthofearthtotem02]],
-	["Tremor Totem"] = [[Interface\Icons\Spell_nature_tremortotem]],	
-	["Mana Tide Totem"] = [[Interface\Icons\Spell_frost_summonwaterelemental]],	
-	["Grounding Totem"] = [[Interface\Icons\Spell_nature_groundingtotem]],	
-	["Stoneskin Totem"] = [[Interface\Icons\Spell_nature_stoneskintotem]],
-	["Stoneclaw Totem"] = [[Interface\Icons\Spell_nature_stoneclawtotem]],
-	["Strength of Earth Totem"] = [[Interface\Icons\Spell_nature_earthbindtotem]],
-	["Earth Elemental Totem"] = [[Interface\Icons\Spell_nature_earthelemental_totem]],
-	["Fire Elemental Totem"] = [[Interface\Icons\spell_fire_elemental_totem]],	
-	["Totem of Tranquil Mind"] = [[Interface\Icons\spell_nature_brilliance]],	
-	["Spirit Link Totem"] = [[Interface\Icons\spell_shaman_spiritlink]],	
-	["Searing Totem"] = [[Interface\Icons\Spell_fire_searingtotem]],
-	["Magma Totem"] = [[Interface\Icons\Spell_fire_selfdestruct]],
-	["Frost Resistance Totem"] = [[Interface\Icons\Spell_frostresistancetotem_01]],
-	["Flametongue Totem"] = [[Interface\Icons\Spell_nature_guardianward]],
-	["Totem of Wrath"] = [[Interface\Icons\Spell_fire_totemofwrath]],
-	["Healing Stream Totem"] = [[Interface\Icons\Inv_spear_04]],
-	["Mana Spring Totem"] = [[Interface\Icons\Spell_nature_manaregentotem]],
-	["Cleansing Totem"] = [[Interface\Icons\Spell nature diseasecleansingtotem]],
-	["Fire Resistance Totem"] = [[Interface\Icons\Spell_fireresistancetotem_01]],
-	["Windfury Totem"] = [[Interface\Icons\Spell_nature_windfury]],
-	["Sentry Totem"] = [[Interface\Icons\Spell_nature_removecurse]],
-	["Nature Resistance Totem"] = [[Interface\Icons\Spell nature natureresistancetotem]],
-	["Wrath of Air Totem"] = [[Interface\Icons\Spell_nature_slowingtotem]],
-}
+local locale = GetLocale()
+	if(locale=="ruRU") then
+		local totems = {
+			["Earthbind Totem"] = [[Interface\Icons\Spell_nature_strengthofearthtotem02]],
+			["Тотем трепета"] = [[Interface\Icons\Spell_nature_tremortotem]],	
+			["Mana Tide Totem"] = [[Interface\Icons\Spell_frost_summonwaterelemental]],	
+			["Grounding Totem"] = [[Interface\Icons\Spell_nature_groundingtotem]],	
+			["Stoneskin Totem"] = [[Interface\Icons\Spell_nature_stoneskintotem]],
+			["Stoneclaw Totem"] = [[Interface\Icons\Spell_nature_stoneclawtotem]],
+			["Strength of Earth Totem"] = [[Interface\Icons\Spell_nature_earthbindtotem]],
+			["Earth Elemental Totem"] = [[Interface\Icons\Spell_nature_earthelemental_totem]],
+			["Fire Elemental Totem"] = [[Interface\Icons\spell_fire_elemental_totem]],	
+			["Totem of Tranquil Mind"] = [[Interface\Icons\spell_nature_brilliance]],	
+			["Spirit Link Totem"] = [[Interface\Icons\spell_shaman_spiritlink]],	
+			["Searing Totem"] = [[Interface\Icons\Spell_fire_searingtotem]],
+			["Magma Totem"] = [[Interface\Icons\Spell_fire_selfdestruct]],
+			["Frost Resistance Totem"] = [[Interface\Icons\Spell_frostresistancetotem_01]],
+			["Flametongue Totem"] = [[Interface\Icons\Spell_nature_guardianward]],
+			["Totem of Wrath"] = [[Interface\Icons\Spell_fire_totemofwrath]],
+			["Healing Stream Totem"] = [[Interface\Icons\Inv_spear_04]],
+			["Mana Spring Totem"] = [[Interface\Icons\Spell_nature_manaregentotem]],
+			["Cleansing Totem"] = [[Interface\Icons\Spell nature diseasecleansingtotem]],
+			["Fire Resistance Totem"] = [[Interface\Icons\Spell_fireresistancetotem_01]],
+			["Windfury Totem"] = [[Interface\Icons\Spell_nature_windfury]],
+			["Sentry Totem"] = [[Interface\Icons\Spell_nature_removecurse]],
+			["Nature Resistance Totem"] = [[Interface\Icons\Spell nature natureresistancetotem]],
+			["Wrath of Air Totem"] = [[Interface\Icons\Spell_nature_slowingtotem]],
+		}
+	else
+		local totems = {
+			["Earthbind Totem"] = [[Interface\Icons\Spell_nature_strengthofearthtotem02]],
+			["Tremor Totem"] = [[Interface\Icons\Spell_nature_tremortotem]],	
+			["Mana Tide Totem"] = [[Interface\Icons\Spell_frost_summonwaterelemental]],	
+			["Grounding Totem"] = [[Interface\Icons\Spell_nature_groundingtotem]],	
+			["Stoneskin Totem"] = [[Interface\Icons\Spell_nature_stoneskintotem]],
+			["Stoneclaw Totem"] = [[Interface\Icons\Spell_nature_stoneclawtotem]],
+			["Strength of Earth Totem"] = [[Interface\Icons\Spell_nature_earthbindtotem]],
+			["Earth Elemental Totem"] = [[Interface\Icons\Spell_nature_earthelemental_totem]],
+			["Fire Elemental Totem"] = [[Interface\Icons\spell_fire_elemental_totem]],	
+			["Totem of Tranquil Mind"] = [[Interface\Icons\spell_nature_brilliance]],	
+			["Spirit Link Totem"] = [[Interface\Icons\spell_shaman_spiritlink]],	
+			["Searing Totem"] = [[Interface\Icons\Spell_fire_searingtotem]],
+			["Magma Totem"] = [[Interface\Icons\Spell_fire_selfdestruct]],
+			["Frost Resistance Totem"] = [[Interface\Icons\Spell_frostresistancetotem_01]],
+			["Flametongue Totem"] = [[Interface\Icons\Spell_nature_guardianward]],
+			["Totem of Wrath"] = [[Interface\Icons\Spell_fire_totemofwrath]],
+			["Healing Stream Totem"] = [[Interface\Icons\Inv_spear_04]],
+			["Mana Spring Totem"] = [[Interface\Icons\Spell_nature_manaregentotem]],
+			["Cleansing Totem"] = [[Interface\Icons\Spell nature diseasecleansingtotem]],
+			["Fire Resistance Totem"] = [[Interface\Icons\Spell_fireresistancetotem_01]],
+			["Windfury Totem"] = [[Interface\Icons\Spell_nature_windfury]],
+			["Sentry Totem"] = [[Interface\Icons\Spell_nature_removecurse]],
+			["Nature Resistance Totem"] = [[Interface\Icons\Spell nature natureresistancetotem]],
+			["Wrath of Air Totem"] = [[Interface\Icons\Spell_nature_slowingtotem]],
+		}
+	end
 
 -- format numbers
 function round(num, idp)
@@ -240,9 +269,9 @@ local function SkinObjects(frame)
 	-- selection highlight
 	local select = frame:CreateTexture(nil, 'OVERLAY')
 	select:SetAllPoints(hp)
-	select:SetTexture(mediaFolder.."highlight")
-	select:SetTexCoord(0,1,1,0)
-	select:SetVertexColor(1,1,1,0.4)
+	select:SetTexture("Interface\\AddOns\\oUF_mono\\backdrop_texture")
+	--select:SetTexCoord(0,1,1,0)
+	select:SetVertexColor(.5,.5,.5,1)
 	select:SetBlendMode('ADD')
 	select:Hide()
 	frame.select = select
@@ -301,11 +330,11 @@ local function SkinObjects(frame)
 	raidicon:SetParent(hp)	
 	raidicon:SetPoint("TOPRIGHT", hp, "TOPLEFT", -4, 0)
 	raidicon:SetSize(cbIconSize, cbIconSize)
-	raidicon:SetTexture(mediaFolder.."raidicons")		
+	--raidicon:SetTexture(mediaFolder.."raidicons")		
 	
 	frame.level = level
 	frame.elite = elite
-	frame.boss = bossicon	
+	frame.boss = bossicon
 		
 	QueueObject(frame, threat)
 	QueueObject(frame, hpborder)
