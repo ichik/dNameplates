@@ -1,0 +1,118 @@
+Minimalistic and lightweight nameplates, somewhat customizable via dNameplates.lua.
+
+Features
+* spell icon
+* Totems are shown as icons
+* current health value 
+- current health value is hidden @100% health
+- between 35% and 25%, value is yellow colored
+- between 25% and 20%, value is orange colored
+- below 20%, value is red colored
+* added hankthetank's raidicon textures
+* show hostile nameplates in combat and/or optionally hide them out of combat
+- by default nameplates show in combat and do not hide out of combat 
+...
+
+
+Credits:
+p3lim - for Overhead
+hankthetank - raid icon texture
+
+
+Changelog:
+
+r15
+* selected nameplates will be larger than others
+* added options to set the increased size for selected plates
+- adWidth = 14				-- additional width for selected nameplate (hpWidth + adWidth)
+- adHeight = 4				-- additional height for selected nameplate (hpHeight + adHeight)
+* fixed totem icon display, which broke in r14, because of level display ... D'OH!
+
+
+r14
+* added Totem of Tranquil Mind support
+* added Spirit Link Totem support
+* added 1px border around totem icons
+* added highlight for selected nameplate
+* tweaked level and name position code
+* added an option to set a font shadow offset (default: FontShadowOffset = 0)
+- 1 = (1,-1), 1.5 = (1.5, -1.5), ...
+
+
+r13
+* forgot to include raidicon texture ...
+
+
+r12
+* Totems are now shown as icons
+* some CVars are now set by default 
+	- SetCVar("ShowClassColorInNameplate", 1)
+	- SetCVar("nameplateShowEnemyTotems", 1)
+* added level display ...
+* some minor visual tweaks
+
+
+r11
+* removed some obsolete code
+* small visual tweaks
+
+
+r10
+* toc update for patch 4.x
+* code rewritten, extremely simplified, no longer based on caelNameplates
+* removed class icon code
+* removed separate config - some options (size, etc) can still be found in dNameplates.lua
+* level is now hidden
+* names are no longer abbreviated
+
+
+r9
+* nicer raidicon position...
+
+r8
+* replaced the "glow border" with a solid border, to match my oUF layout
+* added an option to change the border color
+* long names will be abbreviated, to match my oUF layout (for example: Sunreaver Mage Guardian becomes S. M. Guardian)
+* added an option to change the maximum number of characters before a name gets abbreviated
+* revised class icon code
+* added new border to class icon
+* some tweaks
+* removed the class icon textures from the package and use blizzards default textures instead - reduced package size FTW ...
+* removed some more unused textures and fonts from the package - reduced package size FTW ... #2
+
+r7 
+* added an option to change the position of the nameplate (X and Y Offset)
+* cleaned up some code and improved PlateBuffs compatibility
+
+r6
+* added class icon (only visible for hostile players)
+* added 3 icon sets of class textures (oldClassIcons, newClassIcons, newClassIconsB)
+- you can choose a different one, via config 
+- you might have to adjust the size of the icon, depending on the texture you choose
+* added hankthetanks's raidicon textures
+* added an icon texture (dBBorderJ) for castbars spell icon
+* added a new mouseover highlight texture and made the highlight slightly more visible
+* added a more flat bartexture (dM2) and set it as default
+* level text font shadow can be turned on/off via "showFontShadow", too
+
+r5
+* possible fix for r4 nil error, everyone but myself seems to enounter - D'OH! #2
+ 
+r4
+* added current health value as a possible shown health value
+* added an option to show/hide current health value
+* added an option to show/hide percent health value
+- if both options are true it will show both, current AND percent health value
+
+r3
+* possible fix for a nil error everyone but myself seems to enounter - D'OH! 
+
+r2
+* added an option to turn auto show nameplates in combat on/off
+* added auto hide nameplates out of combat (disabled by default)
+* added an option to turn auto hide nameplates out of combat on/off
+* added an option to show/hide a shadow behind text (disabled by default)
+* removed some fonts
+
+r1
+* initial release

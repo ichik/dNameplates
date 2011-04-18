@@ -1,0 +1,6 @@
+## Interface: 40000
+## Author: Dawn
+## Title: dNameplates
+## Version: r10
+## Notes: simple nameplate addon
+dNameplates.lua
